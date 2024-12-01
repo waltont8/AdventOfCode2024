@@ -23,7 +23,8 @@ module Lazy (
     readChar,
     firstInt,
     readInt,
-    replaceAll
+    replaceAll,
+    dist
 
 ) where
 
@@ -138,3 +139,6 @@ firstInt (h:xs) = read num
 
 replaceAll :: Eq t => t -> t -> [t] -> [t]
 replaceAll x y = map (\h -> if h == x then y else h)
+
+dist :: Int -> Int -> Int
+dist a b = abs $ a - b
