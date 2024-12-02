@@ -8,6 +8,6 @@ That felt quite fiddly for day 1. Working on columns, having to do lookups again
 Day 1 code is  [here](AoC/src/Day01.hs)
 
 ## --- Day 2: Red-Nosed Reports ---
-I was super short on time for this one because I have a train to catch so it's not clever. I'm just fingers crossed that Haskell's Lazy evaluation means it doesn't actually generate all possible strings with missing characters and just does enough to fail the function. Be interesting to profile it and see what it's actually doing.
+I was super short on time for this one because I have a train to catch so it's not clever. For part 2, removing one digit from a list effectively makes the list valid, the trick is to decide which one to remove. I just generated all possible strings and checked them all. I'm just fingers crossed that Haskell's Lazy evaluation means it doesn't actually generate all possible strings with missing characters and just does enough to fail the function. Be interesting to profile it and see what it's actually doing.
 
 Day 2 code is  [here](AoC/src/Day02.hs)
