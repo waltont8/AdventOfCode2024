@@ -55,7 +55,7 @@ mapRead m a = if (M.member a m) then (m M.! a) else 0
 flatten :: [[a]] -> [a]         
 flatten xs = (\z n -> foldr (\x y -> foldr z y x) n xs) (:) []
 
-hasAll :: String -> String -> Bool
+hasAll :: Eq e => [e] -> [e] -> Bool
 hasAll a b = all (`elem` b) a
 
 tupleMap f (a,b) = (f a, f b)
