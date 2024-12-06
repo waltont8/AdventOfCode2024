@@ -24,7 +24,7 @@ getRules = foldl addRule M.empty
 addRule :: Rules -> String ->  Rules
 addRule rules row = M.insert f l rules
     where
-        l = s:(lookupRule rules f)
+        l = s:lookupRule rules f
         (f,s) = ((\[f,s] -> (read f, read s)) . splitOn "|") row
 
 middle :: [a] -> a
@@ -38,7 +38,7 @@ isSorted r l = l == s
         s = sortBy (sortRules r) l
 
 sortRules :: Rules -> Int -> Int -> Ordering
-sortRules r a b = if b `elem` (lookupRule r a) then LT else GT
+sortRules r a b = if b `elem` lookupRule r a then LT else GT
 
 lookupRule :: Rules -> Int -> [Int]
 lookupRule r i = fromMaybe [] $ M.lookup i r
@@ -46,9 +46,8 @@ lookupRule r i = fromMaybe [] $ M.lookup i r
 part1 :: (Rules, [[Int]]) -> Int
 part1 (rules, candidates) = sum $ map middle $ filter (isSorted rules) candidates
 
-
 part2 :: (Rules, [[Int]]) -> Int
-part2 (rules, candidates) = sum $ map middle $ map (sortBy (sortRules rules)) $ filter (not . isSorted rules) candidates
+part2 (rules, candidates) = sum $ map (middle . sortBy (sortRules rules)) (filter (not . isSorted rules) candidates)
 
 tidy :: (Int, Int) -> (String, String)
 tidy (a,b) = (show a, show b)
