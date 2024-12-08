@@ -4,6 +4,7 @@ module Day08
 
 import Lazy
 
+-- You did this one in C, file in same folder.
 
 day08 :: String -> (String, String)
 day08 = lines >>> head >>> parse >>> part1 &&& part2 >>> tidy

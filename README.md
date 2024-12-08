@@ -30,9 +30,14 @@ Day 5 code is  [here](AoC/src/Day05.hs)
 ## --- Day 6: Guard Gallivant ---
 Grids that need updating are a pain to do quickly in haskell, as is anything that involves moving around in an unpredictable way, like a security guard walking around a puzzle. You can do it and it's bomb proof when you do, but you need to spend a good amount of time thinking really hard about it, which is not easy early in the morning and not really compatible with AoC's "do it really fast" thing. So I just used C. I can do anything in C, super fast, and it'll always work for my one test case. It's super dangerous and would explode in production, but I have to remember this is AoC and sometimes C is the right tool for the job.
 
-Day 6 code is  [here](AoC/src/day06.hs)
+Day 6 code is  [here](AoC/src/day06.c)
 
 ## --- Day 7: Bridge Repair ---
 This one was pretty easy. Just throw it at haskell and let the lazy evaluation deal with it. I might do this in C just to compare.
 
-Day 7 code is  [here](AoC/src/day07.hs)
+Day 7 code is  [here](AoC/src/Day07.hs)
+
+## --- Day 8: Resonant Collinearity ---
+I did this one in c++ (So I could use Map). I do feel slightly sad about that, a haskell solution would have been more robust, but that's just not the goal here. I can't decide whether I suck at haskell or whether it's just really clunky to deal with grids and maps. If this thing is on next year, I'm going to make a new language for it.
+
+Day 8 code is  [here](AoC/src/day08.cpp)
