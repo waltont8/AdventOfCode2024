@@ -43,6 +43,6 @@ I did this one in c++ (So I could use Map). I do feel slightly sad about that, a
 Day 8 code is  [here](AoC/src/day08.cpp)
 
 ## --- Day 9: Disk Fragmenter ---
-Another easy one today. Rather than try to do anything fast with lists of tuples in haskell I used C (despite the file extension) and just inflated the disk image with and then actually defragged it. If I still had spare time in my life, this would really benefit from a dos style degrag visualization.
+Another easy one today. Rather than try to do anything fast with lists of tuples in haskell I used C (despite the file extension) and just inflated the disk image and then actually defragged it. If I still had spare time in my life, this would really benefit from a dos style defrag visualization.
 
 Day 9 code is  [here](AoC/src/day09.cpp)
