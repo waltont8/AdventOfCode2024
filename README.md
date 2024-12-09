@@ -41,3 +41,8 @@ Day 7 code is  [here](AoC/src/Day07.hs)
 I did this one in c++ (So I could use Map). I do feel slightly sad about that, a haskell solution would have been more robust, but that's just not the goal here. I can't decide whether I suck at haskell or whether it's just really clunky to deal with grids and maps. If this thing is on next year, I'm going to make a new language for it.
 
 Day 8 code is  [here](AoC/src/day08.cpp)
+
+## --- Day 9: Disk Fragmenter ---
+Another easy one today. Rather than try to do anything fast with lists of tuples in haskell I used C (despite the file extension) and just inflated the disk image with and then actually defragged it. If I still had spare time in my life, this would really benefit from a dos style degrag visualization.
+
+Day 9 code is  [here](AoC/src/day09.cpp)
