@@ -46,3 +46,8 @@ Day 8 code is  [here](AoC/src/day08.cpp)
 Another easy one today. Rather than try to do anything fast with lists of tuples in haskell I used C (despite the file extension) and just inflated the disk image and then actually defragged it. If I still had spare time in my life, this would really benefit from a dos style defrag visualization.
 
 Day 9 code is  [here](AoC/src/day09.cpp)
+
+## --- Day 10: Hoof It ---
+Well that was just confusing. I never actually got to a point where I understood the question, I just guessed what seemed likely for part2 and did that.
+
+Day 10 code is  [here](AoC/src/day10.c)
