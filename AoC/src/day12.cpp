@@ -41,54 +41,43 @@ void count2(char target, int x, int y, int *area, int *corner)
     map[y][x] = target - 32;
 
     (*area)++;
-    if (no(x+1,y,target))
-    {
-        if (no(x,y+1,target)&&no(x+1,y+1,target))
-        {
-            (*corner)++;
-        }
-        if (!no(x,y+1,target)&&!no(x+1,y+1,target))
-        {
-            (*corner)++;
-        }
-    }
-    if (no(x-1,y,target))
-    {
-        if (no(x,y-1,target)&&no(x-1,y-1,target))
-        {
-            (*corner)++;
 
-        }
-        if (!no(x,y-1,target)&&!no(x-1,y-1,target))
-        {
-            (*corner)++;         
-        }
-    }
-    if (no(x,y+1,target))
+    // Outside corners
+    if (no(x+1,y,target)&&no(x,y+1,target))
     {
-        if (no(x-1,y,target)&&no(x-1,y+1,target))
-        {
-            (*corner)++;      
-
-        }
-        if (!no(x-1,y,target)&&!no(x-1,y+1,target))
-        {
-            (*corner)++;       
-
-        }        
+        (*corner)++;
     }
-    if (no(x,y-1,target))
+    if (no(x-1,y,target)&&no(x,y+1,target))
     {
-        if (no(x+1,y,target)&&no(x+1,y-1,target))
-        {
-            (*corner)++;map[y][x]='*';
-        }
-        if (!no(x+1,y,target)&&!no(x+1,y-1,target))
-        {
-            (*corner)++;map[y][x]='*';
-        }    
+        (*corner)++;
+    }
+    if (no(x-1,y,target)&&no(x,y-1,target))
+    {
+        (*corner)++;
+    }
+    if (no(x+1,y,target)&&no(x,y-1,target))
+    {
+        (*corner)++;
     }
 
+
+    // Inside corners
+    if (!no(x+1,y,target)&&!no(x,y+1,target) && no(x+1,y+1,target))
+    {
+        (*corner)++;
+    }
+    if (!no(x-1,y,target)&&!no(x,y+1,target) && no(x-1,y+1,target))
+    {
+        (*corner)++;
+    }
+    if (!no(x-1,y,target)&&!no(x,y-1,target) && no(x-1,y-1,target))
+    {
+        (*corner)++;
+    }
+    if (!no(x+1,y,target)&&!no(x,y-1,target) && no(x+1,y-1,target))
+    {
+        (*corner)++;
+    }
     count2(target, x+1, y, area, corner);
     count2(target, x-1, y, area, corner);
     count2(target, x, y+1, area, corner);
