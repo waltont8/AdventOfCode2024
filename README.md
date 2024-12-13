@@ -51,3 +51,18 @@ Day 9 code is  [here](AoC/src/day09.cpp)
 Well that was just confusing. I never actually got to a point where I understood the question, I just guessed what seemed likely for part2 and did that.
 
 Day 10 code is  [here](AoC/src/day10.c)
+
+## --- Day 11: Plutonian Pebbles ---
+This was obviously going to be another part2 is a huge number one, so I used python which gave me access to functools cache, which is magic. Feels like cheating.
+
+Day 11 code is  [here](AoC/src/day11.py)
+
+## --- Day 12: Garden Groups ---
+Another cpp entry. Floodfill over a garden to find the size of different areas and then two ways of counting the perimeter. For part2 I found an edge and then counted left and right (or up and down) to find the ends of that edge, that was messy and took ages so I'm rewriting it to pattern match corners instead. I nearly ran out of time on this one. I only have about 20 minutes to get this stuff finished and I get interrupted a lot.
+
+Day 12 code is  [here](AoC/src/day12.cpp)
+
+## --- Day 13: Claw Contraption ---
+Deployed megaparsec, which was nice. I'd almost forgotten how to use it! Part1 and Part2 are the same because again, it was fairly obvious that part2 was just going to be a big O check on part1. Remembering how megaparsec worked took a while and I am really running short on time now. I suspect the problems will stop fitting into my morning by next week. 
+
+Day 13 code is  [here](AoC/src/Day13.hs)
