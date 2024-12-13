@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define COLS 8
-#define ROWS 8
+#define COLS 140
+#define ROWS 140
 
 char map[ROWS][COLS];
 
@@ -45,35 +45,35 @@ void count2(char target, int x, int y, int *area, int *corner)
     {
         if (no(x,y+1,target)&&no(x+1,y+1,target))
         {
-            (*corner)++;map[y][x]='*';
+            (*corner)++;
         }
         if (!no(x,y+1,target)&&!no(x+1,y+1,target))
         {
-            (*corner)++;map[y][x]='*';
+            (*corner)++;
         }
     }
     if (no(x-1,y,target))
     {
         if (no(x,y-1,target)&&no(x-1,y-1,target))
         {
-            (*corner)++;map[y][x]='*';
+            (*corner)++;
 
         }
         if (!no(x,y-1,target)&&!no(x-1,y-1,target))
         {
-            (*corner)++;   map[y][x]='*';         
+            (*corner)++;         
         }
     }
     if (no(x,y+1,target))
     {
         if (no(x-1,y,target)&&no(x-1,y+1,target))
         {
-            (*corner)++;    map[y][x]='*';        
+            (*corner)++;      
 
         }
         if (!no(x-1,y,target)&&!no(x-1,y+1,target))
         {
-            (*corner)++;   map[y][x]='*';         
+            (*corner)++;       
 
         }        
     }
@@ -167,7 +167,5 @@ int main(void)
   }
 
    part1();
-   dump();
    part2();
-   dump();
 }
