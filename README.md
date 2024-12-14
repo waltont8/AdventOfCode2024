@@ -66,3 +66,9 @@ Day 12 code is  [here](AoC/src/day12.cpp)
 Deployed megaparsec, which was nice. I'd almost forgotten how to use it! Part1 and Part2 are the same because again, it was fairly obvious that part2 was just going to be a big O check on part1. Remembering how megaparsec worked took a while and I am really running short on time now. I suspect the problems will stop fitting into my morning by next week. 
 
 Day 13 code is  [here](AoC/src/Day13.hs)
+
+## --- Day 14: Restroom Redoubt ---
+So I did part 1 in Haskell. I was assuming for part 2 I would have to go and remove the loop and just calculate the results after a huge number of steps, but no, you had to look for a picture of a xmas tree?! Very cool. I wrote a backward step function and a tool in https://processing.org that would let me search through the different steps.
+<p align="center">
+  <img src="day14.png" width="550" title="Vizualization of Day 14">
+</p>
