@@ -6,10 +6,10 @@ import Lazy
 
 
 day09 :: String -> (String, String)
-day09 = parse >>> part1 &&& part2 >>> tidy
+day09 = lines >>> head >>> parse >>> part1 &&& part2 >>> tidy
 
-parse :: String -> [(Int,Int)]
-parse = zip [0..]
+parse :: String -> [String]
+parse = splitOn ","
 
 part1 :: [String] -> Int
 part1 s = sum $ map read s

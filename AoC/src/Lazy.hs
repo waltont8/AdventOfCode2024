@@ -24,7 +24,8 @@ module Lazy (
     firstInt,
     readInt,
     replaceAll,
-    dist
+    dist,
+    getInts
 
 ) where
 
@@ -129,6 +130,13 @@ listSplit p s = case dropWhile p s of
                 s' -> w : listSplit p s''
                   where (w, s'') = break p s'
 
+getInts :: String -> [Int]
+getInts "" = []
+getInts s = num : getInts xs
+    where
+        dropNoise = dropWhile (\x -> (not (isDigit x)) && x /= '-') s
+        num = readSignedInt $ takeWhile (\x -> isDigit x || x == '-') dropNoise
+        xs = dropWhile (\x -> isDigit x || x == '-') dropNoise
 
 firstInt :: String -> Int
 firstInt (h:xs) = read num
