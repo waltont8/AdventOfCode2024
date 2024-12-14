@@ -72,8 +72,9 @@ So I did part 1 in Haskell. I was assuming for part 2 I would have to go and rem
 <p align="center">
   <img src="day14.png" width="550" title="Vizualization of Day 14">
 </p>
-I'm pretty good with https://love2d.org and https://www.pygame.org/ and https://www.raylib.com (and a bunch of others) but I always come back to processing for quick visualizations (even though I'm not really a fan of java).
+I'm pretty good with [lvoe2d](https://love2d.org) and [pygame](https://www.pygame.org/) and [raylib](https://www.raylib.com) (and a bunch of others) but I always come back to processing for quick visualizations (even though I'm not really a fan of java).
 
 Day 14 code is  [here](AoC/src/Day14.hs)
+
 and the also:   [here](AoC/src/day14.java)
 
