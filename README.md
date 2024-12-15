@@ -134,4 +134,8 @@ Another fun one today, lots of mutable state and 2d grids so I used c++. My solu
 ####################################################################################################
 ```
 
+<p align="center">
+  <img src="day15.gif" width="550" title="Vizualization of Day 15">
+</p>
+
 Day 15 code is  [here](AoC/src/day15.cpp)
