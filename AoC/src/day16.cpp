@@ -14,7 +14,7 @@
 
 
 char map[ROWS][COLS];
-int cost[ROWS][COLS];
+int cost[ROWS][COLS][4] = {INFINITY};
 
 int startX = 0;
 int startY = 0;
@@ -28,18 +28,6 @@ void dump()
         for (int x = 0; x < COLS; x++)
         {
             printf("%c", map[y][x]);
-        }
-        printf("\n");
-    }
-    printf("\n");
-}
-void dumpScore()
-{
-    for (int y = 0; y < ROWS; y++)
-    {
-        for (int x = 0; x < COLS; x++)
-        {
-            printf("%d,", cost[y][x]);
         }
         printf("\n");
     }
@@ -61,7 +49,7 @@ void part2()
 }
 
 void drawPaths(int x, int y)
-{
+{ This should be a recursive function to path find back to the start. pick the start direction
     map[y][x] = 'O';
 
     if (cost[y][x+1] == cost[y][x] - 1 || cost[y][x+1] == cost[y][x] - 1001) drawPaths(x+1,y);
@@ -73,9 +61,9 @@ void drawPaths(int x, int y)
 void annotate(int x, int y, int dir, int tot)
 {
     if (map[y][x] != '.') return;
-    if (tot > (cost[y][x])) return;
+    if (tot > (cost[y][x][dir])) return;
 
-    cost[y][x] = tot;
+    cost[y][x][dir] = tot;
 
     switch (dir)
     {
@@ -123,12 +111,14 @@ void init()
     {
         for (int x = 0; x < COLS; x++)
         {
-            cost[y][x] = INFINITY;
             if (map[y][x] == 'S')
             {
                 startX = x;
                 startY = y;
-                cost[y][x] = 0;
+                cost[y][x][0] = 0;
+                cost[y][x][1] = 0;
+                cost[y][x][2] = 0;
+                cost[y][x][3] = 0;
                 map[y][x] = '.';
             }
             
@@ -153,7 +143,6 @@ int main(void)
     printf("%d\n", cost[finishY][finishX]);
     drawPaths(finishX, finishY);
     dump();
-    dumpScore();
     part2();
 
 }
