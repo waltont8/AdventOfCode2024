@@ -139,3 +139,20 @@ Another fun one today, lots of mutable state and 2d grids so I used c++. My solu
 </p>
 
 Day 15 code is  [here](AoC/src/day15.cpp)
+
+## --- Day 16: Reindeer Maze ---
+Got halfway through refactoring this one. Part1 is a fairly straightforward dijkstra with step cost + turn cost for each cell. Part 2 I implemented by having four mazes, one for each direction, hopping up and down between them, stepping back up the path. I've been trying to tidy this one up a bit because it's interesting and it feels like there is a cleaner solution. Maybe in the xmas holiday.
+
+Day 16 code is  [here](AoC/src/day16.cpp)
+
+## --- Day 17: Chronospatial Computer ---
+Day 17 part 1 was pretty straightforward, just step through the program. Part 2 took some experimentation, I noticed that the numbers in the output converged on the answer as you increased the register value so I wrapped the program up in another script and then guessed my way to the answer by jumping smaller distances until I found it. It took a while and it's a mess but this wasn't really interesting enough to do anything else with. Also, back to haskell with this one.
+
+Day 17 code is  [here](AoC/src/Day017.hs)
+
+## --- Day 18: RAM Run ---
+And back to cpp for another maze. Dead easy. Part 2 I just hacked the maze solve into the loop that populates the maze and ran it again every time I added a *. Part2 is commented out in the code. Again, messy, but the performance of AoC solutions is time taken to code them + time taken to run them. An interesting take on Big O :)
+
+Day 18 code is  [here](AoC/src/day18.cpp)
+
+
