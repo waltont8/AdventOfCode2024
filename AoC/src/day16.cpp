@@ -49,7 +49,7 @@ void part2()
 }
 
 void drawPaths(int x, int y)
-{ This should be a recursive function to path find back to the start. pick the start direction
+{
     map[y][x] = 'O';
 
     if (cost[y][x+1] == cost[y][x] - 1 || cost[y][x+1] == cost[y][x] - 1001) drawPaths(x+1,y);
