@@ -156,3 +156,7 @@ And back to cpp for another maze. Dead easy. Part 2 I just hacked the maze solve
 Day 18 code is  [here](AoC/src/day18.cpp)
 
 
+## --- Day 19: Linen Layout ---
+Just used functools.cache for part1 in anticipation of part2. Still feels like cheating.
+
+Day 19 code is  [here](AoC/src/day19.py)
