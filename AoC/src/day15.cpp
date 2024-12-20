@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "gifenc.h"
 
 #define COLS_1 50
 #define ROWS_1 50
@@ -16,8 +15,6 @@ char map2[ROWS_2][COLS_2];
 #define LINES 70
 #define LENGTH 1000
 char code[LINES][LENGTH];
-
-ge_GIF *gif;
 
 int startX = 0;
 int startY = 0;
@@ -170,48 +167,12 @@ bool pushBox2(int x, int y, int dx, int dy, bool dryrun)
     return false;
 }
 
-void dumpFrame(int xx, int yy)
-{
-    for (int y = 0; y < ROWS_2; y++)
-    {
-        for (int x = 0; x < COLS_2; x++)
-        {
-            uint8_t c = 0;
-            if (map2[y][x] == '[' || map2[y][x] == ']')
-            {
-                c=3;
-            }
-             if (map2[y][x] == '.')
-            {
-                c=0;
-            }
-            if (map2[y][x] == '#')
-            {
-                c=2;
-            }
-            if (x==xx && y==yy) 
-            {
-                c=1;
-            }
-             for (int ox=0;ox<3;ox++)
-            {
-                for (int oy=0;oy<3;oy++)
-                {
-                    gif->frame[x*4+ox+((y*4)+oy)*COLS_2*4] = c;
-                }
-            }
-        }
-    }
-ge_add_frame(gif, 10);
-}
-
 void execute(int x, int y, bool (*f)(int, int, int, int, bool))
 {
     for (int i = 0; i < LINES; i++)
     {
         for (int j = 0; j < LENGTH; j++)
         {
-            dumpFrame(x,y);
             char inst = code[i][j];
             switch (inst)
             {
@@ -359,19 +320,6 @@ void init()
 
 int main(void)
 {
-    gif = ge_new_gif(
-        "example.gif",  /* file name */
-        COLS_2*4, ROWS_2*4,           /* canvas size */
-        (uint8_t []) {  /* palette */
-            0x00, 0x00, 0x00, /* 0 -> black */
-            0xFF, 0x00, 0x00, /* 1 -> red */
-            190, 190, 190, /* 2 -> green */
-            150, 75, 0, /* 3 -> blue */
-        },
-        2,              /* palette depth == log2(# of colors) */
-        -1,             /* no transparency */
-        0               /* infinite loop */
-    );
     init();
     dump();
     //execute(startX, startY, pushBox);
@@ -381,5 +329,4 @@ int main(void)
     execute(startX2, startY2, pushBox2);
     dump2();
     printf("%d\n", score2());
-    ge_close_gif(gif);
 }
