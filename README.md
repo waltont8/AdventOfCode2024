@@ -160,3 +160,9 @@ Day 18 code is  [here](AoC/src/day18.cpp)
 Just used functools.cache for part1 in anticipation of part2. Still feels like cheating.
 
 Day 19 code is  [here](AoC/src/day19.py)
+
+## --- Day 20: Race Condition ---
+It really is all mazes this year, which is great because I like mazes. Pretty easy really, mostly c&p from earlier c++ maze puzzles. I think if you don't spot that it's easy you might try to do something hard and get stuck.
+
+Day 20 code is  [here](AoC/src/day20.cpp)
+
