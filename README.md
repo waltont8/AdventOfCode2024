@@ -166,3 +166,28 @@ It really is all mazes this year, which is great because I like mazes. Pretty ea
 
 Day 20 code is  [here](AoC/src/day20.cpp)
 
+## --- Day 21: Keypad Conundrum ---
+This day was extremely difficult. Thinking through the chain of robot actions, with the first pad being slightly different and the need to avoid the blank spot whilst minimizing cost to the next layer up in the chain, is a lot to hold in your head at once. Part1 took a while because I needed a debug tool to figure out what was wrong and why my results where too big, I then forgot to submit it whilst working on the inevitable part 2. Part 2 was a mash up of two python scripts using functools cache to just pull the lengths of subsequences up through recursion because keeping the actual sequences would make a string too long to store. So really 4 programs in 3 languages to do both parts. I woke up early and thought I'd get this done quickly. Took nearly 2 hours. Didn't have time to sort out the mess, will upload the other scripts when I have recovered. functools.cache really is the star of this year's AoC.
+
+Here is an output from my debugger:
+
+```
+           3                      7          9                 A
+       ^   A         <<      ^^   A     >>   A        vvv      A
+   <   A > A  v <<   AA >  ^ AA > A  v  AA ^ A   < V  AAA >  ^ A
+<v<A>>^AvA^A<vA<AA>>^AAvA<^A>AAvA^A<vA>^AA<A>A<v<A>A>^AAAvA<^A>A
+
+
+           3                          7          9                 A
+       ^   A       ^^        <<       A     >>   A        vvv      A
+   <   A > A   <   AA  v <   AA >>  ^ A  v  AA ^ A  v <   AAA >  ^ A
+v<<A>>^AvA^Av<<A>>^AAv<A<A>>^AAvAA^<A>Av<A>^AA<A>Av<A<A>>^AAAvA^<A>A
+```
+
+Some day 21 code is  [here](AoC/src/day21.cpp)
+
+## --- Day 22: Monkey Market ---
+This one was easy again. Part 1 took no time at all. Part 2 I couldn't think immediately how to optimize the result so I brute forced it in a way that would take 3 hours to complete but which had a very high chance of giving me the right answer early on. Fortunately is does get to the right answer in a few seconds and I can ^c the rest of it.
+
+Day 22 code is  [here](AoC/src/Day22.hs)
+
