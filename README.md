@@ -194,6 +194,8 @@ Day 22 code is  [here](AoC/src/Day22.hs)
 ## --- Day 23: LAN Party ---
 I got the answer very fairly quickly today, I tried to build a part1 that would answer part2 but it wasn't going anywhere so I just did a simple brute force for part1. Then part2 actually turned out to be usedful, but the code is absolutely criminal. Part2 will just run forever, but it pretty quickly prints out the correct answer if you guess one of the nodes involved. I guessed correctly after 7 attempts, just hitting ctrl-c each time. It's actually a really interesting question and I'm not sure what the optimal algorithm is for part2 - something to read up on later.
 
+Edit : Apparently it's called the maximum clique problem and you want the Bron–Kerbosch algorithm!
+
 Day 23 code is  [here](AoC/src/day23.cpp)
 
 
