@@ -6,17 +6,22 @@ import Lazy
 
 
 day25 :: String -> (String, String)
-day25 = lines >>> head >>> parse >>> part1 &&& part2 >>> tidy
+day25 = lines >>> parse >>> part1 >>> tidy
 
-parse :: String -> [String]
-parse = splitOn ","
+parse :: [String] -> ([[String]], [[String]])
+parse =  listSplit (==[]) >>>  (isKey >>> map transpose) &&& (isLock >>> map transpose)
+    where
+        isKey = filter (\x -> last (head x) == '.')
+        isLock = filter (\x -> head (head x) == '#')
 
-part1 :: [String] -> Int
-part1 s = sum $ map read s
+part1 :: ([[String]], [[String]]) -> Int
+part1 (a,b) = length $ filter unlocks [ (x,y) | x <- a, y <- b ]
+    where
+        unlocks (l,k) = all ((<8) . count '#') (zipWith (++) l k)
+
+count :: Eq a => a -> [a] -> Int
+count x = length . filter (x==)
 
 
-part2 :: [String] -> Int
-part2 s = sum $ map read s
-
-tidy :: (Int, Int) -> (String, String)
-tidy (a,b) = (show a, show b)
+tidy :: Int -> (String, String)
+tidy a = (show a, "No part 2")
