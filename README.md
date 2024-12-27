@@ -203,7 +203,7 @@ That was interesting, an adder implemented as a sort of graph that needed fixing
 
 Day 23 code is  [here](AoC/src/day25.cpp)
 
-## --- Day 1: Historian Hysteria ---
+## --- Day 25: Historian Hysteria ---
 Nice quick day25. I needed to go watch people open presents so did a very quick haskell implementation. The transpose function always gets some use during AoC. I just flipped the locks and keys around and added up the number of hash characters. 
 Another year where I got all 25 done on the mornings they came out, I really like the completed calendar animation. Just with I had more time to explore the ideas in the puzzles and write clean and optimized versions of everything.
 
